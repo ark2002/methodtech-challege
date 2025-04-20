@@ -29,10 +29,10 @@ const transformToTimeSeries = (rawData: RawDataEntry[]) => {
 };
 
 const ReturnsChart = () => {
-    const { data } = useCsvData("/dataset/returnsChart.csv");
+    const { data, loading } = useCsvData("/dataset/returnsChart.csv");
     const transformedData = data && transformToTimeSeries(data as RawDataEntry[]);
 
-    return <Chart title="Returns (%)" series={transformedData} />;
+    return <Chart title="Returns (%)" series={transformedData} loading={loading} />;
 };
 
 export default ReturnsChart;

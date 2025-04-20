@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
 import dayjs from 'dayjs';
+import CircularLoader from './CircularLoader';
 
 interface SeriesItem {
     name: string;
@@ -18,9 +19,10 @@ interface TimeChartProps {
     series: SeriesItem[];
 }
 
-const TimeChart: React.FC<TimeChartProps> = ({
+const TimeChart: React.FC<TimeChartProps & { loading: boolean }> = ({
     title = 'Returns (%)',
     series,
+    loading
 }) => {
     const options = {
         backgroundColor: 'transparent',
@@ -117,6 +119,17 @@ const TimeChart: React.FC<TimeChartProps> = ({
             },
         })),
     };
+
+    if (loading) {
+        return (
+            <div className="bg-background-secondary rounded-lg border border-border overflow-hidden shadow-sm min-h-100">
+                <h2 className="text-foreground text-lg mb-2">{title}</h2>
+                <div className="mx-2 mb-1 h-100">
+                    <CircularLoader />
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="bg-background-secondary p-4 rounded-lg border border-border">

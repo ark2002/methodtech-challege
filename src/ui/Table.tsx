@@ -1,3 +1,5 @@
+import CircularLoader from "./CircularLoader";
+
 export type TableRow = {
     [key: string]: string | number;
 };
@@ -35,7 +37,26 @@ export default function Table({
     data,
     highlightedValues = [],
     currencyColumns = [],
-}: TableProps) {
+    loading,
+}: TableProps & { loading: boolean }) {
+
+
+    if (loading) {
+        return (
+            <div className="bg-background-secondary rounded-lg border border-border overflow-hidden shadow-sm min-h-100">
+                {title && (
+                    <div className="p-2">
+                        <h2 className="text-foreground text-lg font-medium">{title}</h2>
+                    </div>
+                )}
+                <div className="mx-2 mb-1 h-[80%]">
+                    <CircularLoader />
+                </div>
+            </div>
+        );
+    }
+
+
     return (
         <div className="bg-background-secondary rounded-lg border border-border overflow-hidden shadow-sm min-h-100">
             {title && (
