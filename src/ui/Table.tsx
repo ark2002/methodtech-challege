@@ -84,7 +84,7 @@ export default function Table({
                                 key={i}
                                 className={`border-t border-border ${i % 2 !== 0 ? "" : "bg-[#ffffff0d]"}`}
                             >
-                                {columns.map((col, j) => {
+                                {columns.map((_, j) => {
                                     const key = Object.keys(row)[j];
                                     const value = row[key];
                                     const isHighlighted = highlightedValues.includes(value);
