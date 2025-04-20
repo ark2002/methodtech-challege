@@ -52,6 +52,7 @@ methodtech-challenge/
 │   │   └── useCsvdata.ts
 │   ├── ui/
 │   │   ├── Chart.tsx
+|   |   ├── CircularLoader.tsx
 │   │   └── Table.tsx
 │   ├── App.tsx
 │   ├── App.css
