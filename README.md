@@ -2,6 +2,10 @@
 
 This projectis a **React + TypeScript + Vite** application designed to display financial data in a dashboard format. It includes interactive charts, tables, and a date range picker for analyzing portfolio performance and valuation ratios.
 
+## Live Demo
+
+[View Demo](https://methodtech-challenge.netlify.app/)
+
 ## Table of Contents
 
 - [Features](#features)
